@@ -1,0 +1,116 @@
+/* 전체 기본 설정 */
+body {
+    font-family: 'Malgun Gothic', sans-serif;  /* 글꼴: 맑은 고딕 (없으면 기본 산세리프) */
+    background-color: #ffffff;                  /* 배경색: 흰색 */
+    color: #000000;                             /* 글자색: 검정 */
+    margin: 0;                                  /* 바깥 여백 제거 */
+    padding: 0;                                 /* 안쪽 여백 제거 */
+}
+
+/* GitHub 버튼 (우측 상단 고정) */
+#github-btn {
+    position: fixed;              /* 화면 위치에 고정 (스크롤해도 안 움직임) */
+    top: 20px;                    /* 위에서 20픽셀 떨어진 위치 */
+    right: 20px;                  /* 오른쪽에서 20픽셀 떨어진 위치 */
+    z-index: 100;                 /* 겹쳤을 때 위에 표시 (숫자 클수록 위) */
+    padding: 10px 20px;           /* 안쪽 여백: 위아래 10, 좌우 20픽셀 */
+    background-color: #24292e;    /* 배경색: 검정 (GitHub 컨셉) */
+    color: #ffffff;               /* 글자색: 흰색 */
+    border-radius: 5px;           /* 모서리 둥글기 5픽셀 */
+    text-decoration: none;        /* a 태그 기본 밑줄 제거 */
+    font-size: 14px;              /* 글자 크기 14픽셀 */
+    font-weight: bold;            /* 글자 굵게 */
+}
+
+#github-btn:hover {                /* 마우스 올렸을 때 */
+    background-color: #444c56;     /* 배경색을 약간 밝게 변경 */
+}
+
+/* 초기 화면 - 화면 중앙 정렬 */
+#home-screen {
+    text-align: center;            /* 안의 글자 가운데 정렬 */
+    height: 100vh;                 /* 높이: 화면 전체 (vh = viewport height) */
+    display: flex;                 /* flex 레이아웃 사용 (정렬 편하게) */
+    flex-direction: column;        /* 자식 요소를 세로로 쌓기 */
+    justify-content: center;       /* 세로축 가운데 정렬 */
+    align-items: center;           /* 가로축 가운데 정렬 */
+}
+
+#home-screen h1 {
+    font-size: 64px;               /* 글자 크기 64픽셀 (이름) */
+    margin-bottom: 10px;           /* 아래 여백 10픽셀 (학번과 가깝게) */
+    color: #1F3A68;                /* 글자색: 네이비 */
+}
+
+#student-id {
+    font-size: 20px;               /* 글자 크기 20픽셀 */
+    color: #5C7CB8;                /* 글자색: 옅은 네이비 */
+    margin-top: 0;                 /* 위 여백 0 (이름과 붙임) */
+    margin-bottom: 40px;           /* 아래 여백 40픽셀 (버튼과 간격) */
+}
+
+#profile-btn {
+    padding: 15px 40px;            /* 안쪽 여백: 위아래 15, 좌우 40픽셀 */
+    font-size: 18px;               /* 글자 크기 18픽셀 */
+    background-color: #1F3A68;     /* 배경색: 네이비 */
+    color: #ffffff;                /* 글자색: 흰색 */
+    border: none;                  /* 테두리 없음 */
+    border-radius: 5px;            /* 모서리 둥글기 5픽셀 */
+    cursor: pointer;               /* 마우스 올리면 손가락 모양 */
+}
+
+#profile-btn:hover {               /* 마우스 올렸을 때 */
+    background-color: #2C5294;     /* 배경색을 약간 밝게 변경 */
+}
+
+/* 프로필 화면 */
+#profile-screen {
+    max-width: 700px;              /* 최대 너비 700픽셀 (그 이상 안 커짐) */
+    margin: 80px auto;             /* 바깥 여백: 위아래 80, 좌우 auto(가운데 정렬) */
+    padding: 30px;                 /* 안쪽 여백 사방 30픽셀 */
+}
+
+#profile-screen h2 {
+    color: #1F3A68;                /* 글자색: 네이비 */
+    border-bottom: 2px solid #1F3A68;  /* 아래 테두리: 2픽셀 실선 네이비 */
+    padding-bottom: 10px;          /* 글자와 아래 선 사이 여백 10픽셀 */
+    margin-top: 40px;              /* 위 여백 40픽셀 (섹션 간격) */
+}
+
+#profile-screen h2:first-of-type {   /* 첫 번째 h2만 선택 */
+    margin-top: 0;                   /* 위 여백 제거 (첫 섹션은 위쪽 공간 X) */
+}
+
+.intro {
+    font-size: 16px;               /* 글자 크기 16픽셀 */
+    line-height: 1.8;              /* 줄 간격 1.8배 (읽기 편하게) */
+    color: #333333;                /* 글자색: 진한 회색 */
+}
+
+#profile-screen p {
+    font-size: 18px;               /* 글자 크기 18픽셀 */
+    line-height: 1.8;              /* 줄 간격 1.8배 */
+}
+
+/* 기술 스택, 관심 분야 - 알약 모양 */
+.skills, .interests {              /* 두 클래스에 같은 스타일 적용 */
+    list-style: none;              /* 목록의 점(•) 제거 */
+    padding: 0;                    /* 안쪽 여백 제거 */
+    display: flex;                 /* flex 레이아웃 (가로로 나열) */
+    flex-wrap: wrap;               /* 공간 부족하면 줄바꿈 허용 */
+    gap: 10px;                     /* 항목 사이 간격 10픽셀 */
+}
+
+.skills li, .interests li {
+    padding: 8px 16px;             /* 안쪽 여백: 위아래 8, 좌우 16픽셀 */
+    background-color: #EEF2F8;     /* 배경색: 연한 네이비 */
+    color: #1F3A68;                /* 글자색: 네이비 */
+    border-radius: 20px;           /* 모서리 둥글기 20픽셀 (알약 모양) */
+    font-size: 14px;               /* 글자 크기 14픽셀 */
+    font-weight: bold;             /* 글자 굵게 */
+}
+
+#history {
+    font-size: 16px;               /* 글자 크기 16픽셀 */
+    line-height: 2;                /* 줄 간격 2배 */
+}
