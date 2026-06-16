@@ -10,6 +10,9 @@
 <!-- GitHub 버튼 (프로필 화면에서만 표시) -->
 <a id="github-btn" href="https://github.com/hjhj2004/portfolio-web" target="_blank" style="display: none;">GitHub</a>
 
+<!-- README 버튼 (프로필 화면에서만 표시) -->
+<button id="readme-btn" style="display: none;">README</button>
+
 <!-- 초기 화면 -->
 <div id="home-screen">
     <h1>황희제</h1>
@@ -51,6 +54,12 @@
 
     <h2>이력</h2>
     <ul id="history"></ul>
+
+    <!-- README 표시 영역 (버튼 누르면 채워짐) -->
+    <div id="readme-content" style="display: none;">
+        <h2>README</h2>
+        <pre id="readme-text"></pre>
+    </div>
 </div>
 
 <script src="script.js"></script>

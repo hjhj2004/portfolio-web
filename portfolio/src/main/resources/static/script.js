@@ -14,6 +14,7 @@ button.addEventListener("click", function() {
             document.getElementById("home-screen").style.display = "none";
             document.getElementById("profile-screen").style.display = "block";
             document.getElementById("github-btn").style.display = "block";
+            document.getElementById("readme-btn").style.display = "block";
 
             // 받은 데이터 화면에 표시
             document.getElementById("name").textContent = data.name;
@@ -27,5 +28,22 @@ button.addEventListener("click", function() {
                 li.textContent = item;
                 historyList.appendChild(li);
             });
+        });
+});
+
+// README 버튼 가져오기
+const readmeBtn = document.getElementById("readme-btn");
+
+// README 버튼 클릭 시 동작
+readmeBtn.addEventListener("click", function() {
+    // 서버에 README 요청
+    fetch("/api/readme")
+        .then(function(response) {
+            return response.json();
+        })
+        .then(function(data) {
+            // 받은 README 내용을 화면에 표시
+            document.getElementById("readme-text").textContent = data.content;
+            document.getElementById("readme-content").style.display = "block";
         });
 });
