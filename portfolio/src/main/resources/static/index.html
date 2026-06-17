@@ -7,12 +7,6 @@
 </head>
 <body>
 
-<!-- GitHub 버튼 (프로필 화면에서만 표시) -->
-<a id="github-btn" href="https://github.com/hjhj2004/portfolio-web" target="_blank" style="display: none;">GitHub</a>
-
-<!-- README 버튼 (프로필 화면에서만 표시) -->
-<button id="readme-btn" style="display: none;">README</button>
-
 <!-- 초기 화면 -->
 <div id="home-screen">
     <h1>황희제</h1>
@@ -23,15 +17,32 @@
 <!-- 프로필 화면 (처음엔 숨김) -->
 <div id="profile-screen" style="display: none;">
 
-    <h2>자기소개</h2>
-    <p class="intro">
+    <!-- 상단 고정 바: 섹션 이동 버튼 + GitHub + README 버튼 -->
+    <div id="nav-bar" style="display: none;">
+        <div id="nav-left">
+            <button class="nav-btn" data-target="section-intro">자기소개</button>
+            <button class="nav-btn" data-target="section-skills">기술 스택</button>
+            <button class="nav-btn" data-target="section-interests">관심 분야</button>
+            <button class="nav-btn" data-target="section-info">기본 정보</button>
+            <button class="nav-btn" data-target="section-history">이력</button>
+            <button class="nav-btn" data-target="section-projects">프로젝트</button>
+        </div>
+
+        <div id="nav-right">
+            <a id="github-btn" href="https://github.com/hjhj2004/portfolio-web" target="_blank">GitHub</a>
+            <button id="readme-btn">README</button>
+        </div>
+    </div>
+
+    <h2 id="section-intro" class="fade-up">자기소개</h2>
+    <p class="intro fade-up">
         안녕하세요. 보안에 관심을 가지고 공부하고 있는 정보보호학과 4학년 황희제입니다.
         정보보호 관련 공부 중 흥미를 느껴 정보보호병으로 지원해 복무하였습니다.
         현재는 화이트햇스쿨을 수료하며 보안 기초를 다지고, 웹 개발을 함께 학습하고 있습니다.
     </p>
 
-    <h2>기술 스택</h2>
-    <ul class="skills">
+    <h2 id="section-skills" class="fade-up">기술 스택</h2>
+    <ul class="skills fade-up">
         <li>HTML</li>
         <li>CSS</li>
         <li>JavaScript</li>
@@ -39,21 +50,41 @@
         <li>Spring Boot</li>
     </ul>
 
-    <h2>관심 분야</h2>
-    <ul class="interests">
+    <h2 id="section-interests" class="fade-up">관심 분야</h2>
+    <ul class="interests fade-up">
         <li>정보보안</li>
         <li>웹 해킹</li>
         <li>시스템 보안</li>
     </ul>
 
     <!-- 서버에서 받아오는 데이터 -->
-    <h2>기본 정보</h2>
-    <p>이름: <span id="name"></span></p>
-    <p>학과: <span id="department"></span></p>
-    <p>학년: <span id="year"></span></p>
+    <h2 id="section-info" class="fade-up">기본 정보</h2>
+    <p class="fade-up">이름: <span id="name"></span></p>
+    <p class="fade-up">학과: <span id="department"></span></p>
+    <p class="fade-up">학년: <span id="year"></span></p>
 
-    <h2>이력</h2>
-    <ul id="history"></ul>
+    <h2 id="section-history" class="fade-up">이력</h2>
+    <ul id="history" class="fade-up"></ul>
+
+    <!-- 프로젝트 섹션 (새로 추가) -->
+    <h2 id="section-projects" class="fade-up">프로젝트</h2>
+    <div class="projects fade-up">
+
+        <!-- 프로젝트 카드 1 -->
+        <div class="project-card">
+            <img src="overwatch.png" alt="오버워치 프로젝트">
+            <h3>오버워치 소개 페이지</h3>
+            <p>HTML/CSS로 제작한 게임 소개 페이지 프로젝트입니다.</p>
+        </div>
+
+        <!-- 프로젝트 카드 2 -->
+        <div class="project-card">
+            <img src="starbucks.png" alt="스타벅스 프로젝트">
+            <h3>스타벅스 클론 페이지</h3>
+            <p>HTML/CSS로 제작한 카페 메뉴 페이지 프로젝트입니다.</p>
+        </div>
+
+    </div>
 
     <!-- README 표시 영역 (버튼 누르면 채워짐) -->
     <div id="readme-content" style="display: none;">
