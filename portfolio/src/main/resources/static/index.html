@@ -7,18 +7,11 @@
 </head>
 <body>
 
-<!-- 초기 화면 -->
-<div id="home-screen">
-    <h1>황희제</h1>
-    <p id="student-id">23018102</p>
-    <button id="profile-btn">프로필 보기</button>
-</div>
-
-<!-- 프로필 화면 (처음엔 숨김) -->
-<div id="profile-screen" style="display: none;">
+<!-- 프로필 화면 (처음부터 보임) -->
+<div id="profile-screen">
 
     <!-- 상단 고정 바: 섹션 이동 버튼 + GitHub + README 버튼 -->
-    <div id="nav-bar" style="display: none;">
+    <div id="nav-bar">
         <div id="nav-left">
             <button class="nav-btn" data-target="section-intro">자기소개</button>
             <button class="nav-btn" data-target="section-skills">기술 스택</button>
@@ -33,6 +26,9 @@
             <button id="readme-btn">README</button>
         </div>
     </div>
+
+    <!-- 이름 표시 -->
+    <h1 id="page-name">황희제</h1>
 
     <h2 id="section-intro" class="fade-up">자기소개</h2>
     <p class="intro fade-up">
@@ -66,24 +62,19 @@
     <h2 id="section-history" class="fade-up">이력</h2>
     <ul id="history" class="fade-up"></ul>
 
-    <!-- 프로젝트 섹션 (새로 추가) -->
+    <!-- 프로젝트 섹션 -->
     <h2 id="section-projects" class="fade-up">프로젝트</h2>
     <div class="projects fade-up">
-
-        <!-- 프로젝트 카드 1 -->
         <div class="project-card">
             <img src="overwatch.png" alt="오버워치 프로젝트">
             <h3>오버워치 소개 페이지</h3>
             <p>HTML/CSS로 제작한 게임 소개 페이지 프로젝트입니다.</p>
         </div>
-
-        <!-- 프로젝트 카드 2 -->
         <div class="project-card">
             <img src="starbucks.png" alt="스타벅스 프로젝트">
             <h3>스타벅스 클론 페이지</h3>
             <p>HTML/CSS로 제작한 카페 메뉴 페이지 프로젝트입니다.</p>
         </div>
-
     </div>
 
     <!-- README 표시 영역 (버튼 누르면 채워짐) -->

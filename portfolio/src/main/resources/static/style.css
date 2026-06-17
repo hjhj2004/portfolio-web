@@ -7,23 +7,24 @@ body {
     padding: 0;
 }
 
+/* 상단 고정 바 (섹션 이동 버튼 + GitHub + README) */
 #nav-bar {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     z-index: 100;
-    display: flex;                    /* 가로 배치 */
-    justify-content: space-between;   /* 양쪽 끝으로 분산 (왼쪽 묶음 / 오른쪽 묶음) */
-    align-items: center;              /* 세로 가운데 정렬 */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     flex-wrap: wrap;
     gap: 10px;
-    padding: 15px 60px;               /* 좌우 안쪽 여백을 60px로 (끝에 너무 붙지 않게) */
+    padding: 15px 60px;
     background-color: #0D1117;
     border-bottom: 1px solid #333333;
 }
 
-/* 왼쪽 버튼 묶음 (섹션 이동 5개) */
+/* 왼쪽 버튼 묶음 (섹션 이동 6개) */
 #nav-left {
     display: flex;
     flex-wrap: wrap;
@@ -53,7 +54,7 @@ body {
     color: #ffffff;
 }
 
-/* GitHub 버튼 (nav-bar 안으로 이동) */
+/* GitHub 버튼 */
 #github-btn {
     padding: 10px 18px;
     background-color: #ffffff;
@@ -68,7 +69,7 @@ body {
     background-color: #cccccc;
 }
 
-/* README 버튼 (nav-bar 안으로 이동) */
+/* README 버튼 */
 #readme-btn {
     padding: 10px 18px;
     background-color: #4A90D9;
@@ -84,58 +85,19 @@ body {
     background-color: #357ABD;
 }
 
-/* 초기 화면 - 화면 중앙 정렬 */
-#home-screen {
-    text-align: center;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-#home-screen h1 {
-    font-size: 64px;
-    margin-bottom: 10px;
-    animation: colorChange 4s infinite;
-}
-
-@keyframes colorChange {
-    0%   { color: #4A90D9; }
-    25%  { color: #E74C3C; }
-    50%  { color: #2ECC71; }
-    75%  { color: #F1C40F; }
-    100% { color: #4A90D9; }
-}
-
-#student-id {
-    font-size: 20px;
-    color: #aaaaaa;
-    margin-top: 0;
-    margin-bottom: 40px;
-}
-
-#profile-btn {
-    padding: 15px 40px;
-    font-size: 18px;
-    background-color: #1A2230;     /* 어두운 남색 배경 (nav-btn과 동일) */
-    color: #4A90D9;                /* 글자색: 파랑 (nav-btn과 동일) */
-    border: 1px solid #4A90D9;     /* 파란 테두리 (nav-btn과 동일) */
-    border-radius: 30px;           /* 모서리를 둥글게 (알약 모양) */
-    font-weight: bold;
-    cursor: pointer;
-}
-
-#profile-btn:hover {
-    background-color: #4A90D9;     /* 마우스 올리면 배경을 파랑으로 (nav-btn과 동일) */
-    color: #ffffff;                /* 글자는 흰색으로 */
-}
-
-/* 프로필 화면 - 위쪽에 고정 바를 위한 여백 추가 */
+/* 프로필 화면 - 상단 고정 바를 위한 여백 추가 */
 #profile-screen {
     max-width: 700px;
     margin: 0 auto;
-    padding: 100px 30px 30px 30px;  /* 위쪽 여백을 100px로 (고정 바에 안 가려지게) */
+    padding: 100px 30px 30px 30px;
+}
+
+/* 프로필 화면 상단 이름 */
+#page-name {
+    text-align: center;
+    color: #ffffff;
+    font-size: 36px;
+    margin: 0 0 50px 0;
 }
 
 #profile-screen h2 {
@@ -143,7 +105,7 @@ body {
     border-bottom: 2px solid #4A90D9;
     padding-bottom: 10px;
     margin-top: 300px;
-    scroll-margin-top: 90px;   /* 버튼으로 이동 시 고정 바에 안 가려지도록 여유 공간 */
+    scroll-margin-top: 90px;
 }
 
 #profile-screen h2:first-of-type {
@@ -164,6 +126,7 @@ body {
     margin-bottom: 10px;
 }
 
+/* 기술 스택, 관심 분야 - 알약 모양 */
 .skills, .interests {
     list-style: none;
     padding: 0;
@@ -190,6 +153,43 @@ body {
     margin-bottom: 40px;
 }
 
+/* 프로젝트 섹션 */
+.projects {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.project-card {
+    background-color: #1A2230;
+    border: 1px solid #333333;
+    border-radius: 10px;
+    padding: 15px;
+    width: 280px;
+}
+
+.project-card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+
+.project-card h3 {
+    color: #4A90D9;
+    font-size: 18px;
+    margin: 0 0 8px 0;
+}
+
+.project-card p {
+    color: #cccccc;
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* README 내용 표시 영역 */
 #readme-text {
     background-color: #111111;
     padding: 20px;
@@ -203,53 +203,15 @@ body {
     border: 1px solid #333333;
 }
 
+/* 스크롤 애니메이션 - 처음엔 투명하고 아래에 있음 */
 .fade-up {
     opacity: 0;
     transform: translateY(60px);
     transition: opacity 2s ease, transform 2s ease;
 }
 
+/* 화면에 들어오면 보이게 됨 */
 .fade-up.visible {
     opacity: 1;
     transform: translateY(0);
-}
-
-/* 프로젝트 섹션 */
-.projects {
-    display: flex;            /* 카드들을 가로로 나열 */
-    flex-wrap: wrap;          /* 공간 부족하면 줄바꿈 */
-    gap: 20px;                /* 카드 사이 간격 */
-}
-
-/* 프로젝트 카드 하나 */
-.project-card {
-    background-color: #1A2230;     /* 어두운 남색 배경 (nav-btn과 통일) */
-    border: 1px solid #333333;     /* 테두리 */
-    border-radius: 10px;           /* 모서리 둥글기 */
-    padding: 15px;                 /* 안쪽 여백 */
-    width: 280px;                  /* 카드 너비 */
-}
-
-/* 프로젝트 카드 안 이미지 */
-.project-card img {
-    width: 100%;               /* 카드 너비에 맞춰 꽉 채우기 */
-    height: 160px;              /* 높이 고정 */
-    object-fit: cover;          /* 비율 유지하면서 영역 꽉 채우기 (잘려도 OK) */
-    border-radius: 6px;         /* 이미지 모서리 둥글기 */
-    margin-bottom: 10px;        /* 아래 여백 */
-}
-
-/* 프로젝트 카드 제목 */
-.project-card h3 {
-    color: #4A90D9;             /* 글자색: 파랑 */
-    font-size: 18px;
-    margin: 0 0 8px 0;          /* 위/좌우 0, 아래만 8px */
-}
-
-/* 프로젝트 카드 설명 */
-.project-card p {
-    color: #cccccc;             /* 글자색: 연한 회색 */
-    font-size: 14px;
-    line-height: 1.5;
-    margin: 0;                  /* 여백 없음 */
 }
